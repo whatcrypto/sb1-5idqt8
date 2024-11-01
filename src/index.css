@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'PixelFont';
+    src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+  }
+
+  body {
+    @apply antialiased text-gray-100;
+    background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+  }
+}
+
+@layer components {
+  .font-pixel {
+    font-family: 'PixelFont', monospace;
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-cyan-500 
+      hover:from-blue-600 hover:to-cyan-600 
+      disabled:from-gray-500 disabled:to-gray-600;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-5px) rotate(-5deg); }
+  75% { transform: translateX(5px) rotate(5deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 0.8s ease-in-out infinite;
+}
+
+.battle-scene {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0px,
+    rgba(255, 255, 255, 0.1) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+
+.sui-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+}
